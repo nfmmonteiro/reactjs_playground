@@ -25,7 +25,7 @@
 			);
 		}
 
-		function customComponent() {
+		function customComponent1() {
 
 			var Salut = React.createClass({
 				render: function() {
@@ -42,7 +42,23 @@
 			);
 		}
 
-		customComponent();
+
+		function customComponent2() {
+
+			var CustomComponent = React.createClass({
+				render: function() {
+					var properties = {style: {fontFamily: 'Verdana'}};
+					return React.DOM.span(properties, 'I am so custom!');
+				}
+			});
+
+			ReactDOM.render(
+				React.createElement(CustomComponent),
+				document.getElementById('app')
+			);
+		}
+
+		customComponent2();
 
 
 	</script>
