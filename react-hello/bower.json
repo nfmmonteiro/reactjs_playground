@@ -1,0 +1,24 @@
+{
+  "name": "react-hello",
+  "homepage": "https://github.com/nunomonteiro/reactjs_playground",
+  "authors": [
+    "Nuno Monteiro <nfmmonteiro@gmail.com>"
+  ],
+  "description": "Introduction to React",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "React"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.0"
+  }
+}
