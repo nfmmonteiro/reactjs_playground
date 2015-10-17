@@ -1,112 +1,22 @@
 <html>
 <head>
 	<title>React Hello</title>
-	<script src="app/lib/react/react.js"></script>
-	<script src="app/lib/react/react-dom.js"></script>
 </head>
 <body>
 	<div id="app"></div>
 
+	<script src="app/lib/react/react.js"></script>
+	<script src="app/lib/react/react-dom.js"></script>
+
+	<script src="app/components.js"></script>
+	<script src="app/customComponents.js"></script>
+	<script src="app/propTypes.js"></script>
+	<script src="app/states.js"></script>
+
 	<script type="text/javascript">
-		
 		var appPlaceholder = document.getElementById('app');
-
-		function helloWorld() {
-			ReactDOM.render(
-				React.DOM.h1(null, "Hello World!"),
-				appPlaceholder
-			);
-		}
-
-		function nestedReactComponents() {
-			ReactDOM.render(
-				React.DOM.div({style: {width: "100%", margin: "1em"}}, 
-					React.DOM.h1({id: "title"}, React.DOM.strong(null, "Hello World!")), 
-					React.DOM.p({className: "paragraph"}, "This is just a paragraph...")),
-				appPlaceholder
-			);
-		}
-
-		function customComponent1() {
-
-			var Salut = React.createClass({
-				render: function() {
-					var text = "Hello " + this.props.name + "!";
-					return React.DOM.span(null, text);
-				}
-			});
-
-			var salut = React.createElement(Salut, {name: "Nuno Monteiro"});
-			
-			ReactDOM.render(
-				salut,
-				appPlaceholder
-			);
-		}
-
-
-		function customComponent2() {
-
-			var CustomComponent = React.createClass({
-				render: function() {
-					var properties = {style: {fontFamily: 'Verdana'}};
-					return React.DOM.span(properties, 'I am so custom!');
-				}
-			});
-
-			ReactDOM.render(
-				React.createElement(CustomComponent),
-				appPlaceholder
-			);
-		}
-
-		function customComponentUsingFactory() {
-			
-			var Component = React.createClass({
-				render: function() {
-					return React.DOM.span(
-						{id: this.props.id}, 
-						"Hello " + this.props.name + '!'
-					);
-				}
-			});
-
-			var ComponentFactory = React.createFactory(Component);
-
-			ReactDOM.render(
-				ComponentFactory({id: 'salut', name: 'Nuno Monteiro'}),
-				appPlaceholder
-			);
-		}
-
-		function notUsingReactDotDOM() {
-			var component = React.createElement('h1', {id: 'id'}, 'Hello World!');
-			ReactDOM.render(component, appPlaceholder);
-		}
-
-
-		function propTypes() {
-
-			var Component = React.createClass({
-				propTypes: {
-					id: React.PropTypes.string.isRequired,
-					orders: React.PropTypes.number.isRequired
-				},
-				render: function() {
-					return React.DOM.span(
-							{id: this.props.id}, 
-							("Number of orders:  " + this.props.orders + "!"));
-				}
-			});
-
-			ReactDOM.render(
-				React.createElement(Component, {id: 'id', orders: 2}),
-				appPlaceholder
-			);
-		}
-
-		propTypes();
-
+		states();
 	</script>
+	
 </body>
 </html>
