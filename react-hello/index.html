@@ -9,10 +9,12 @@
 
 	<script type="text/javascript">
 		
+		var appPlaceholder = document.getElementById('app');
+
 		function helloWorld() {
 			ReactDOM.render(
 				React.DOM.h1(null, "Hello World!"),
-				document.getElementById('app')
+				appPlaceholder
 			);
 		}
 
@@ -21,7 +23,7 @@
 				React.DOM.div({style: {width: "100%", margin: "1em"}}, 
 					React.DOM.h1({id: "title"}, React.DOM.strong(null, "Hello World!")), 
 					React.DOM.p({className: "paragraph"}, "This is just a paragraph...")),
-				document.getElementById('app')
+				appPlaceholder
 			);
 		}
 
@@ -38,7 +40,7 @@
 			
 			ReactDOM.render(
 				salut,
-				document.getElementById('app')
+				appPlaceholder
 			);
 		}
 
@@ -54,7 +56,7 @@
 
 			ReactDOM.render(
 				React.createElement(CustomComponent),
-				document.getElementById('app')
+				appPlaceholder
 			);
 		}
 
@@ -73,11 +75,16 @@
 
 			ReactDOM.render(
 				ComponentFactory({id: 'salut', name: 'Nuno Monteiro'}),
-				document.getElementById('app')
+				appPlaceholder
 			);
 		}
 
-		customComponentUsingFactory();
+		function notUsingReactDotDOM() {
+			var component = React.createElement('h1', {id: 'id'}, 'Hello World!');
+			ReactDOM.render(component, appPlaceholder);
+		}
+
+		notUsingReactDotDOM();
 
 
 	</script>
