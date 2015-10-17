@@ -58,7 +58,26 @@
 			);
 		}
 
-		customComponent2();
+		function customComponentUsingFactory() {
+			
+			var Component = React.createClass({
+				render: function() {
+					return React.DOM.span(
+						{id: this.props.id}, 
+						"Hello " + this.props.name + '!'
+					);
+				}
+			});
+
+			var ComponentFactory = React.createFactory(Component);
+
+			ReactDOM.render(
+				ComponentFactory({id: 'salut', name: 'Nuno Monteiro'}),
+				document.getElementById('app')
+			);
+		}
+
+		customComponentUsingFactory();
 
 
 	</script>
