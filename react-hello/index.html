@@ -25,7 +25,24 @@
 			);
 		}
 
-		nestedReactComponents();
+		function customComponent() {
+
+			var Salut = React.createClass({
+				render: function() {
+					var text = "Hello " + this.props.name + "!";
+					return React.DOM.span(null, text);
+				}
+			});
+
+			var salut = React.createElement(Salut, {name: "Nuno Monteiro"});
+			
+			ReactDOM.render(
+				salut,
+				document.getElementById('app')
+			);
+		}
+
+		customComponent();
 
 
 	</script>
