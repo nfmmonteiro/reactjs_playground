@@ -4,7 +4,7 @@
   "description": "React.js application to show a stream of photos posted publicly on Twitter",
   "main": "index.js",
   "scripts": {
-    "serve": "npm install && node_modules/.bin/http-server ./build -p 8000 -o -d",
+    "start": "npm install && node_modules/.bin/http-server ./build -p 8000 -o -d",
     "snapkite": "cd ../snapkite-engine && npm install && npm start"
   },
   "repository": {
